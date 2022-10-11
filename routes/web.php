@@ -11,8 +11,10 @@ Route::get('/', function() {
     return redirect()->route('dashboard');
 });
 
-Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('login', [AuthController::class, 'Login'])->name('login.post');
+Route::middleware('guest')->group(function() {
+    Route::get('login', [AuthController::class, 'index'])->name('login');
+    Route::post('login', [AuthController::class, 'Login'])->name('login.post');
+});
 
 Route::middleware('auth')->group(function() {
     Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');

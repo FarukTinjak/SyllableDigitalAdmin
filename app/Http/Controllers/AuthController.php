@@ -29,17 +29,13 @@ class AuthController extends Controller
     }
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return view('dashboard');
     }
 
     public function signOut() {
         Session::flush();
         Auth::logout();
 
-        return Redirect('login');
+        return redirect('login');
     }
 }

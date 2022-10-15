@@ -17,6 +17,7 @@ class CreateBlogPostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->string('subtitle');
             $table->string('thumbnail_path')->nullable();
             $table->mediumText('content');
             $table->timestamps();

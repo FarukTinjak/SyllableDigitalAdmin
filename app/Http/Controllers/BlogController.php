@@ -48,7 +48,7 @@ class BlogController extends Controller
             $imagePath = (microtime(true) * 10000). '.'. strtolower($image->getClientOriginalExtension());
             $image->move($destinationPath, $imagePath);
 
-            $blog->thumbnail_path = 'uploads/images/' . $imagePath;
+                $blog->thumbnail_path = 'uploads/images/' . $imagePath;
         }
 
         $blog->save();

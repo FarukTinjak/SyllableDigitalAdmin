@@ -30,8 +30,8 @@
 @foreach($posts as $post)
                             <tr>
                                 <td class="text-center">
-                                @if($post->thumbnail_path !== null && file_exists(public_path('uploads/images/' . $post->thumbnail_path)))
-                                    <img src="{{asset('uploads/images/'.$post->thumbnail_path)}}" style="max-width: 150px; max-height: 150px;" alt="">
+                                @if($post->thumbnail_path !== null && file_exists(public_path($post->thumbnail_path)))
+                                    <img src="{{asset($post->thumbnail_path)}}" style="max-width: 150px; max-height: 150px;" alt="">
                                 @else
                                 No photo
                                 @endif
